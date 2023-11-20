@@ -5,10 +5,6 @@ const TodoList = () => {
     const [todos, setTodos] = useState([]);
     const [newTodo, setNewTodo] = useState("");
 
-    //onClick = {() => props.raamatuAndmed(props.id)
-
-
-
     const LisaTodo = () => {
         const todo = {
             id: todos.length === 0 ? 1 : todos[todos.length - 1].id + 1,
@@ -16,7 +12,6 @@ const TodoList = () => {
         }
         setTodos([...todos, todo])
     }
-
 
     const kustutaTodo = (id) => {
         setTodos(todos.filter((todo) => todo.id !== id))
@@ -56,7 +51,9 @@ const TodoList = () => {
                             <span id="span">{todo.todoName}</span>
 
                             <input ID="check" type="checkbox" checked={todo.checked} onChange={() => checkbox_Checking(index)} />
+
                             <span id="number">{todos.indexOf(todo) + 1}</span>
+                            np
                             <span id="aeg">Lisatud {time()}</span>
 
                             <button className="button1" onClick={() => kustutaTodo(todo.id)}>X</button>
