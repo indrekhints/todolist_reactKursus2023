@@ -1,5 +1,6 @@
 import React from 'react';
 import "./index.css";
+import "./App.css";
 import TodoList from './TodoList';
 
 
@@ -10,11 +11,5 @@ function App() {
       <TodoList />
     </div>
   )
-
-
-
-
-
-
 }
 export default App;
