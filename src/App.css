@@ -1,12 +1,3 @@
 .App {
   text-align: center;
 }
-
-.contaier {
-
-  display: flex;
-  max-width: 55%;
-  border-color: black;
-  background-color: blue;
-
-}

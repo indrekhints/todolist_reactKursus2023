@@ -93,16 +93,14 @@ body {
   opacity: 1;
 }
 
-.tilesWrap li button: .input {
-  color: #262a2b;
-}
+
 
 
 
 .tilesWrap li button {
   background: transparent;
   border: 1px solid #b7b7b7;
-  padding: 1px 1x;
+  padding: 1px;
   color: #b7b7b7;
   border-radius: 3px;
   position: relative;
@@ -282,7 +280,7 @@ tilesWrap li:after {
   border-radius: 20%;
 }
 
-input[type="checkbox"]::#check {
+input[type="checkbox"] {
   /* ...existing styles */
 
   transform-origin: bottom left;
@@ -290,7 +288,7 @@ input[type="checkbox"]::#check {
 }
 
 #span {
-  position: ;
+
   left: 0px;
   top: 0px;
   font-size: 1em;
@@ -308,5 +306,5 @@ input[type="checkbox"]::#check {
   height: 12px;
   width: 12px;
   margin: 0px;
-  opacity: ;
+
 }
