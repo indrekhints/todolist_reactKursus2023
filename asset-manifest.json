@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/indrekhints/todolist_reactKursus2023/static/css/main.dd5cf67b.css",
+    "main.js": "/indrekhints/todolist_reactKursus2023/static/js/main.48e9226b.js",
+    "static/js/787.30b79000.chunk.js": "/indrekhints/todolist_reactKursus2023/static/js/787.30b79000.chunk.js",
+    "index.html": "/indrekhints/todolist_reactKursus2023/index.html",
+    "main.dd5cf67b.css.map": "/indrekhints/todolist_reactKursus2023/static/css/main.dd5cf67b.css.map",
+    "main.48e9226b.js.map": "/indrekhints/todolist_reactKursus2023/static/js/main.48e9226b.js.map",
+    "787.30b79000.chunk.js.map": "/indrekhints/todolist_reactKursus2023/static/js/787.30b79000.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd5cf67b.css",
+    "static/js/main.48e9226b.js"
+  ]
+}
