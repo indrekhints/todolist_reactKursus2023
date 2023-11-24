@@ -1,40 +1,71 @@
 import React, { useState } from "react";
 import './App.css';
+import { createElement } from 'react';
+import { useEffect } from "react";
 
 const TodoList = () => {
     const [todos, setTodos] = useState([]);
     const [newTodo, setNewTodo] = useState("");
 
+
     const LisaTodo = () => {
         const todo = {
-            id: todos.length === 0 ? 1 : todos[todos.length - 1].id + 1,
-            todoName: newTodo,
+            id: Math.random(),
+            todoText: newTodo,
+            show: false,
+            tehtud: false
         }
         setTodos([...todos, todo])
+        setNewTodo("")
     }
 
     const kustutaTodo = (id) => {
         setTodos(todos.filter((todo) => todo.id !== id))
     }
-    const checkbox_Checking = (index) => {
-        const newTodos = [...todos]
-        newTodos[index].checked = !newTodos[index].checked;
-        setTodos(newTodos);
-        //todos.style.backgroundColor = "red";
+
+
+    function muudaDisplay(id) {
+
+        setTodos(todos.map((todo) => {
+            if (todo.id === id) {
+                todo.show = !todo.show
+            }
+            return todo
+        })
+        )
+    }
+
+    function muudaTodo(id) {
+        setTodos(todos.map((todo) => {
+            if (todo.id === id) {
+                return {
+                    ...todo,
+                    todoText: newTodo,
+                    show: false
+                }
+            } return todo
+
+
+        }))
+        setNewTodo("")
+    }
+    function tehtudDisplay(id) {
+        setTodos(todos.map((todo) => {
+            if (todo.id === id) {
+                todo.tehtud = !todo.tehtud
+            } console.log(todo)
+            return todo
+        })
+        )
     }
 
     function time() {
-        let day = new Date().getDate()
-        let month = new Date().getMonth()
-        let year = new Date().getFullYear()
-        let hours = new Date().getHours()
-        let minutes = new Date().getMinutes()
-
-        return (
-            day + "." + month + "." + year + "." + "   kell  " + hours + " : " + minutes
-        )
+        const now = new Date();
+        const currentDateTime = now.toLocaleString();
+        return currentDateTime
 
     }
+
 
     return (
         <>
@@ -47,17 +78,24 @@ const TodoList = () => {
                 <ul className="tilesWrap">
                     {todos.map((todo, index) =>
 
-                        <li key={index}>
-                            <span id="span">{todo.todoName}</span>
-
-                            <input ID="check" type="checkbox" checked={todo.checked} onChange={() => checkbox_Checking(index)} />
-
-                            <span id="number">{todos.indexOf(todo) + 1}</span>
-                            np
-                            <span id="aeg">Lisatud {time()}</span>
-
+                        <li key={index} >
+                            <p className="tehtud" style={{ textColor: todo.tehtud ? "#b7b7b7" : "#4a8734" }}>{todo.todoText} </p>
+                            <p id="number">{todos.indexOf(todo) + 1}</p>
+                            <p id="aeg">Lisatud {time()}</p>
                             <button className="button1" onClick={() => kustutaTodo(todo.id)}>X</button>
-                            <button className="button1">muuda</button>
+                            <button className="button1" onClick={() => muudaDisplay(todo.id)}>Muuda</button>
+                            <button className="button1" onClick={() => tehtudDisplay(todo.id)}>Tehtud</button>
+
+                            <div style={{ display: todo.show ? "inline" : "none" }}>
+                                <input className="peidetudInput"
+                                    value={newTodo} onChange={(e) => setNewTodo(e.target.value)}
+                                    style={{ display: todo.show ? "inline-block" : "none" }}
+                                    type="text"
+                                />
+                                <button className="hiddenButton" onClick={() => muudaTodo(todo.id)}>OK</button>
+
+                            </div>
+
 
                         </li>)}
                 </ul>
