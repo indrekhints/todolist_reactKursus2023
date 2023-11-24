@@ -121,10 +121,12 @@ body {
 .tilesWrap li:hover button {
   transform: translateX(7px);
   opacity: 1;
+
 }
 
 .tilesWrap li button:hover {
   color: #262a2b;
+  background-color: #cac5cc;
 }
 
 .tilesWrap li button:hover:before {
