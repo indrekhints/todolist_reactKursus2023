@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import './App.css';
-import { createElement } from 'react';
-import { useEffect } from "react";
+
 
 const TodoList = () => {
     const [todos, setTodos] = useState([]);
     const [newTodo, setNewTodo] = useState("");
+    const [muudaTodos, setMuudaTodo] = useState("")
 
 
     const LisaTodo = () => {
@@ -15,8 +15,14 @@ const TodoList = () => {
             show: false,
             tehtud: false
         }
-        setTodos([...todos, todo])
-        setNewTodo("")
+        if (newTodo === "") {
+            return alert("mida meelde jätame? Väli on tühi!")
+        } else {
+            setTodos([...todos, todo])
+            setNewTodo("")
+
+        }
+
     }
 
     const kustutaTodo = (id) => {
@@ -40,7 +46,7 @@ const TodoList = () => {
             if (todo.id === id) {
                 return {
                     ...todo,
-                    todoText: newTodo,
+                    todoText: muudaTodos,
                     show: false
                 }
             } return todo
@@ -88,7 +94,7 @@ const TodoList = () => {
 
                             <div style={{ display: todo.show ? "inline" : "none" }}>
                                 <input className="peidetudInput"
-                                    value={newTodo} onChange={(e) => setNewTodo(e.target.value)}
+                                    value={muudaTodos} onChange={(e) => setMuudaTodo(e.target.value)}
                                     style={{ display: todo.show ? "inline-block" : "none" }}
                                     type="text"
                                 />
