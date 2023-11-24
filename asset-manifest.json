@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/todolist_reactKursus2023/static/css/main.3814d678.css",
-    "main.js": "/todolist_reactKursus2023/static/js/main.e7a16fcb.js",
+    "main.js": "/todolist_reactKursus2023/static/js/main.283e0572.js",
     "static/js/787.30b79000.chunk.js": "/todolist_reactKursus2023/static/js/787.30b79000.chunk.js",
     "index.html": "/todolist_reactKursus2023/index.html",
     "main.3814d678.css.map": "/todolist_reactKursus2023/static/css/main.3814d678.css.map",
-    "main.e7a16fcb.js.map": "/todolist_reactKursus2023/static/js/main.e7a16fcb.js.map",
+    "main.283e0572.js.map": "/todolist_reactKursus2023/static/js/main.283e0572.js.map",
     "787.30b79000.chunk.js.map": "/todolist_reactKursus2023/static/js/787.30b79000.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3814d678.css",
-    "static/js/main.e7a16fcb.js"
+    "static/js/main.283e0572.js"
   ]
 }
